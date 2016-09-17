@@ -1,8 +1,9 @@
 var http = require('http'); // access the 'http' module
 var fs = require('fs'); // file system module
-var extract = require('./extract.js'); // import custom module using 'require'
+var extract = require('./extract'); // import custom module using 'require'
+var wss = require('./websockets-server');
 
-// check for file error 404 
+// check for file error 404
 var handleError = function (err, res) {
   res.writeHead(404);
   res.end();
